@@ -64,13 +64,28 @@ public class UserRegistration {
         System.out.println("Your phone number is: " +contact);
     }
 
+    public void validPassword(){
+        /*As a User need to follow pre-defined Password rules.
+         Rule1 – minimum 8 Characters
+         */
+        System.out.println("Enter the Password: ");
+        String password = sc.next();
+        boolean result = Pattern.matches("[A-z0-9]{8,}", password);
+        if (result) {
+            System.out.println("Success");
+        } else {
+            System.out.println("Enter valid password..");
+        }
+        System.out.println("Your password is: " +password);
+    }
+
 
     public static void main(String[] args) {
         System.out.println("Welcome to user registration program");
         UserRegistration userReg = new UserRegistration();
         int option;
         while (true) {
-            System.out.print("1.First Name\n2.Last Name\n3.Email\n4.ContactNumber\n5.Exit");
+            System.out.print("1.First Name\n2.Last Name\n3.Email\n4.ContactNumber\n5.Password\n6.Exit");
             System.out.println("\nEnter option number: ");
             option = sc.nextInt();
 
@@ -88,8 +103,12 @@ public class UserRegistration {
                     userReg.contactNumber();
                     break;
                 case 5:
+                    userReg.validPassword();
+                case 6:
                     System.exit(0);
                     break;
+                default:
+                    System.out.println("invalid option");
             }
         }
     }
