@@ -20,12 +20,25 @@ public class UserRegistration {
         System.out.println("First name is: " + firstName);
     }
 
+    public void validLastName(){
+        System.out.print("Enter Last Name: " );
+        String lastName = sc.next();
+        Boolean result = Pattern.matches("[A-Z][a-z]{2,}",lastName);
+        if (result) {
+            System.out.println("Success");
+        }
+        else {
+            System.out.println("please enter valid last name ");
+        }
+        System.out.println("Last name is: " +lastName);
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to user registration program");
         UserRegistration userReg = new UserRegistration();
         int option;
         while (true) {
-            System.out.print("1.First Name\n2.Exit");
+            System.out.print("1.First Name\n2.Last Name\n3.Exit");
             System.out.println("\nEnter option number: ");
             option = sc.nextInt();
 
@@ -34,6 +47,9 @@ public class UserRegistration {
                     userReg.validfirstName();
                     break;
                 case 2:
+                    userReg.validLastName();
+                    break;
+                case 3:
                     System.exit(0);
                     break;
             }
