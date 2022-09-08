@@ -85,6 +85,18 @@ public class UserRegistration {
         }
         System.out.println("Your password is: " +password);
     }
+    public void sampleEmailsCheck(){
+        /*Should clear all email samples provided separately UC9 */
+        System.out.println("Enter the given sample email: ");
+        String email = sc.next();
+        Boolean result = (Pattern.matches("[A-z0-9.]*[.+-]?[A-z0-9.]*[@]+[a-z0-9]*[.]+[a-z]{2,}([.]+[a-z]{2,})?", email));
+        if (result) {
+            System.out.println("Clear");
+        }
+        else{
+            System.out.println("Not clear");
+        }
+    }
 
 
     public static void main(String[] args) {
@@ -92,7 +104,7 @@ public class UserRegistration {
         UserRegistration userReg = new UserRegistration();
         int option;
         while (true) {
-            System.out.print("1.First Name\n2.Last Name\n3.Email\n4.ContactNumber\n5.Password\n6.Exit");
+            System.out.print("1.First Name\n2.Last Name\n3.Email\n4.Contact Number\n5.Password\n6.Sample Email check\n7.Exit");
             System.out.println("\nEnter option number: ");
             option = sc.nextInt();
 
@@ -111,7 +123,11 @@ public class UserRegistration {
                     break;
                 case 5:
                     userReg.validPassword();
+                    break;
                 case 6:
+                    userReg.sampleEmailsCheck();
+                    break;
+                case 7:
                     System.exit(0);
                     break;
                 default:
