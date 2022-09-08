@@ -69,13 +69,14 @@ public class UserRegistration {
     }
 
     public void validPassword(){
-        /*As a User need to follow pre-defined Password rules. UC 5,6
+        /*As a User need to follow pre-defined Password rules. UC 5,6,7
          Rule1 – minimum 8 Characters
          Rule2 - atleast 1 Upper case
+         Rule3 - atleast 1 numeric char
          */
         System.out.println("Enter the Password: ");
         String password = sc.next();
-        boolean result = Pattern.matches("[A-Z]+[A-z0-9]{7,}", password);
+        boolean result = Pattern.matches("[A-Z]+[A-z0-9]{6,}[0-9]+", password);
         if (result) {
             System.out.println("Success");
         } else {
