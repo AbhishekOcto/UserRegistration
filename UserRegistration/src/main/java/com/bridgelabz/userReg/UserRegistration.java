@@ -48,13 +48,29 @@ public class UserRegistration {
         System.out.println("Your Email Id is: " +email);
     }
 
+    public void contactNumber(){
+        //method to enter valid mobile number UC4
+        /*Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 digit number*/
+        System.out.print("Enter contact number with country code (91): " );
+        String contact = sc.next();
+
+        boolean result = Pattern.matches("[0-9]{2}[\\s]+[0-9]{10}",contact);
+        if (result) {
+            System.out.println("Success");
+        }
+        else {
+            System.out.println("enter valid contact number");
+        }
+        System.out.println("Your phone number is: " +contact);
+    }
+
 
     public static void main(String[] args) {
         System.out.println("Welcome to user registration program");
         UserRegistration userReg = new UserRegistration();
         int option;
         while (true) {
-            System.out.print("1.First Name\n2.Last Name\n3.Email\n4.Exit");
+            System.out.print("1.First Name\n2.Last Name\n3.Email\n4.ContactNumber\n5.Exit");
             System.out.println("\nEnter option number: ");
             option = sc.nextInt();
 
@@ -69,6 +85,9 @@ public class UserRegistration {
                     userReg.validEmail();
                     break;
                 case 4:
+                    userReg.contactNumber();
+                    break;
+                case 5:
                     System.exit(0);
                     break;
             }
