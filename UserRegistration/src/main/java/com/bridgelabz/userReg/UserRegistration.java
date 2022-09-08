@@ -1,6 +1,10 @@
 package com.bridgelabz.userReg;
 import java.util.Scanner;
 import java.util.regex.*;
+/*
+* @author - ABHISHEK
+* since - 07.09.2022
+* */
 
 public class UserRegistration {
    static Scanner sc = new Scanner(System.in);
@@ -65,12 +69,13 @@ public class UserRegistration {
     }
 
     public void validPassword(){
-        /*As a User need to follow pre-defined Password rules.
+        /*As a User need to follow pre-defined Password rules. UC 5,6
          Rule1 – minimum 8 Characters
+         Rule2 - atleast 1 Upper case
          */
         System.out.println("Enter the Password: ");
         String password = sc.next();
-        boolean result = Pattern.matches("[A-z0-9]{8,}", password);
+        boolean result = Pattern.matches("[A-Z]+[A-z0-9]{7,}", password);
         if (result) {
             System.out.println("Success");
         } else {
