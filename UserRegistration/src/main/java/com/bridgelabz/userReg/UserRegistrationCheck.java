@@ -1,5 +1,9 @@
 package com.bridgelabz.userReg;
 import java.util.Scanner;
+//UC12 Refactor the Code to
+//throw custom
+//exceptions in case of
+//Invalid User Details - Rewrite all Test Cases to take in Custom
 
 import java.util.regex.Pattern;
 
