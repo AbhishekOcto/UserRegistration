@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.bridgelabz.userReg.UserRegistrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-09T03:59:31" hostname="ABHISHEKT" time="0.042">
+  <properties/>
+  <testcase name="password_should_returnTrue()" classname="com.bridgelabz.userReg.UserRegistrationTest" time="0.042"/>
+  <system-out><![CDATA[Please Enter Valid Password
+aAbhu@789
+true
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
